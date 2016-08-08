@@ -99,6 +99,9 @@ if [ -f "${CONFIG_PATH}.tpl" -a ! -f "${CONFIG_PATH}" ]; then
   envsubst < "${CONFIG_PATH}.tpl" > "${CONFIG_PATH}"
 fi
 
+mkdir ${JENKINS_HOME}/plugins/jenkins-openshift-login
+cp -R /opt/openshift/jenkins-openshift-login/* ${JENKINS_HOME}/plugins/jenkins-openshift-login
+
 rm -rf /tmp/war
 
 # if `docker run` first argument start with `--` the user is passing jenkins launcher arguments
