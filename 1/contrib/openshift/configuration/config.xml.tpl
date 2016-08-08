@@ -25,23 +25,23 @@
     <permission>hudson.model.View.Create:admin</permission>
     <permission>hudson.model.View.Delete:admin</permission>
     <permission>hudson.scm.SCM.Tag:admin</permission>
-    <permission>hudson.model.Computer.Configure:editors</permission>
-    <permission>hudson.model.Computer.Delete:editors</permission>
-    <permission>hudson.model.Hudson.Administer:editors</permission>
-    <permission>hudson.model.Hudson.Read:editors</permission>
+    <permission>hudson.model.Computer.Configure:edit</permission>
+    <permission>hudson.model.Computer.Delete:edit</permission>
+    <permission>hudson.model.Hudson.Administer:edit</permission>
+    <permission>hudson.model.Hudson.Read:edit</permission>
     <permission>hudson.model.Hudson.Read:system_builder</permission>
-    <permission>hudson.model.Item.Build:editors</permission>
-    <permission>hudson.model.Item.Configure:editors</permission>
-    <permission>hudson.model.Item.Create:editors</permission>
-    <permission>hudson.model.Item.Delete:editors</permission>
-    <permission>hudson.model.Item.Read:editors</permission>
-    <permission>hudson.model.Item.Workspace:editors</permission>
-    <permission>hudson.model.Run.Delete:editors</permission>
-    <permission>hudson.model.Run.Update:editors</permission>
-    <permission>hudson.model.View.Configure:editors</permission>
-    <permission>hudson.model.View.Create:editors</permission>
-    <permission>hudson.model.View.Delete:editors</permission>
-    <permission>hudson.scm.SCM.Tag:editors</permission>
+    <permission>hudson.model.Item.Build:edit</permission>
+    <permission>hudson.model.Item.Configure:edit</permission>
+    <permission>hudson.model.Item.Create:edit</permission>
+    <permission>hudson.model.Item.Delete:edit</permission>
+    <permission>hudson.model.Item.Read:edit</permission>
+    <permission>hudson.model.Item.Workspace:edit</permission>
+    <permission>hudson.model.Run.Delete:edit</permission>
+    <permission>hudson.model.Run.Update:edit</permission>
+    <permission>hudson.model.View.Configure:edit</permission>
+    <permission>hudson.model.View.Create:edit</permission>
+    <permission>hudson.model.View.Delete:edit</permission>
+    <permission>hudson.scm.SCM.Tag:edit</permission>
   </authorizationStrategy>
   <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
     <disableSignup>true</disableSignup>
