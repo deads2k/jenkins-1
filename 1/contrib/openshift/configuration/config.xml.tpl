@@ -385,7 +385,7 @@
     <serviceAccountName>SA_SHORT_NAME</serviceAccountName>
     <serverPrefix>MASTER_PREFIX</serverPrefix>
     <clientId>SA_NAME</clientId>
-    <clientSecret>TOKEN</clientSecret>
+    <clientSecret>SA_TOKEN</clientSecret>
   </securityRealm>
 
 </hudson>
