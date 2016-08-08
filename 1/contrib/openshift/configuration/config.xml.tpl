@@ -6,11 +6,11 @@
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
   <authorizationStrategy class="hudson.security.GlobalMatrixAuthorizationStrategy">
-    <permission>hudson.model.Computer.Configure:admin</permission>
     <permission>hudson.model.Computer.Configure:system_builder</permission>
+    <permission>hudson.model.Hudson.Administer:system_builder</permission>
+    <permission>hudson.model.Computer.Configure:admin</permission>
     <permission>hudson.model.Computer.Delete:admin</permission>
     <permission>hudson.model.Hudson.Administer:admin</permission>
-    <permission>hudson.model.Hudson.Administer:system_builder</permission>
     <permission>hudson.model.Hudson.Read:admin</permission>
     <permission>hudson.model.Hudson.Read:system_builder</permission>
     <permission>hudson.model.Item.Build:admin</permission>
@@ -25,6 +25,23 @@
     <permission>hudson.model.View.Create:admin</permission>
     <permission>hudson.model.View.Delete:admin</permission>
     <permission>hudson.scm.SCM.Tag:admin</permission>
+    <permission>hudson.model.Computer.Configure:editors</permission>
+    <permission>hudson.model.Computer.Delete:editors</permission>
+    <permission>hudson.model.Hudson.Administer:editors</permission>
+    <permission>hudson.model.Hudson.Read:editors</permission>
+    <permission>hudson.model.Hudson.Read:system_builder</permission>
+    <permission>hudson.model.Item.Build:editors</permission>
+    <permission>hudson.model.Item.Configure:editors</permission>
+    <permission>hudson.model.Item.Create:editors</permission>
+    <permission>hudson.model.Item.Delete:editors</permission>
+    <permission>hudson.model.Item.Read:editors</permission>
+    <permission>hudson.model.Item.Workspace:editors</permission>
+    <permission>hudson.model.Run.Delete:editors</permission>
+    <permission>hudson.model.Run.Update:editors</permission>
+    <permission>hudson.model.View.Configure:editors</permission>
+    <permission>hudson.model.View.Create:editors</permission>
+    <permission>hudson.model.View.Delete:editors</permission>
+    <permission>hudson.scm.SCM.Tag:editors</permission>
   </authorizationStrategy>
   <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
     <disableSignup>true</disableSignup>
