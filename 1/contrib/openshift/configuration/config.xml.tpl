@@ -139,7 +139,7 @@
             <trustedCerts class="set">
               <sun.security.x509.X509CertImpl resolves-to="java.security.cert.Certificate$CertificateRep">
                 <type>X.509</type>
-                <data>CA_CRT/data>
+                <data>CA_CRT</data>
               </sun.security.x509.X509CertImpl>
             </trustedCerts>
           </trustManager>
