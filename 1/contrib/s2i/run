@@ -56,6 +56,7 @@ if [ ! -e ${JENKINS_HOME}/configured ]; then
       SA_TOKEN=$(oc whoami -t)
       CA_CRT=$(head /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -n -1 | tail -n +2)
 
+      cp ${image_config_path}.tpl ${image_config_path}.tpl.orig
       awk -v MASTER_PREFIX="$MASTER_PREFIX" -v SA_NAME="$SA_NAME" -v SA_SHORT_NAME="$SA_SHORT_NAME" -v FOO4="$SA_TOKEN" -v CA_CRT="$CA_CRT" '{
           sub(/MASTER_PREFIX/, MASTER_PREFIX);
           sub(/SA_NAME/, SA_NAME);
