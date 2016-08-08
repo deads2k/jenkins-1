@@ -382,10 +382,7 @@
       </sslSocketFactory>
     </transport>
     <serviceAccountDirectory>/var/run/secrets/kubernetes.io/serviceaccount</serviceAccountDirectory>
-    <serviceAccountName>SA_SHORT_NAME</serviceAccountName>
     <serverPrefix>MASTER_PREFIX</serverPrefix>
-    <clientId>SA_NAME</clientId>
-    <clientSecret>SA_TOKEN</clientSecret>
   </securityRealm>
 
 </hudson>
