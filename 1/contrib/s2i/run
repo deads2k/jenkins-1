@@ -99,6 +99,18 @@ if [ -f "${CONFIG_PATH}.tpl" -a ! -f "${CONFIG_PATH}" ]; then
   envsubst < "${CONFIG_PATH}.tpl" > "${CONFIG_PATH}"
 fi
 
+MASTER_PREFIX=https://openshift.default.svc
+SA_NAME=$(oc whoami)
+SA_SHORT_NAME=$(oc whoami | awk -F':' '{print $4}')
+SA_TOKEN=$(oc whoami -t)
+CA_CRT=$(head /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -n -1 | tail -n +2)
+
+sed -i "s|MASTER_PREFIX|${MASTER_PREFIX}|g" ${image_config_path}
+sed -i "s|SA_NAME|${SA_NAME}|g" ${image_config_path}
+sed -i "s|SA_SHORT_NAME|${SA_SHORT_NAME}|g" ${image_config_path}
+sed -i "s|SA_TOKEN|${SA_TOKEN}|g" ${image_config_path}
+sed -i "s|CA_CRT|${CA_CRT}|g" ${image_config_path}
+
 mkdir ${JENKINS_HOME}/plugins/jenkins-openshift-login
 cp -R /opt/openshift/oauth/* ${JENKINS_HOME}/plugins/
 
