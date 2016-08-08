@@ -100,7 +100,7 @@ if [ -f "${CONFIG_PATH}.tpl" -a ! -f "${CONFIG_PATH}" ]; then
 fi
 
 mkdir ${JENKINS_HOME}/plugins/jenkins-openshift-login
-cp -R /opt/openshift/jenkins-openshift-login/* ${JENKINS_HOME}/plugins/jenkins-openshift-login
+cp -R /opt/openshift/oauth/* ${JENKINS_HOME}/plugins/
 
 rm -rf /tmp/war
 
