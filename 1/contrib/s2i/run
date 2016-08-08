@@ -56,11 +56,14 @@ if [ ! -e ${JENKINS_HOME}/configured ]; then
       SA_TOKEN=$(oc whoami -t)
       CA_CRT=$(head /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -n -1 | tail -n +2)
 
-      sed -i "s|MASTER_PREFIX|${MASTER_PREFIX}|g" ${image_config_path}.tpl
-      sed -i "s|SA_NAME|${SA_NAME}|g" ${image_config_path}.tpl
-      sed -i "s|SA_SHORT_NAME|${SA_SHORT_NAME}|g" ${image_config_path}.tpl
-      sed -i "s|SA_TOKEN|${SA_TOKEN}|g" ${image_config_path}.tpl
-      sed -i "s|CA_CRT|${CA_CRT}|g" ${image_config_path}.tpl
+      awk -v MASTER_PREFIX="$MASTER_PREFIX" -v SA_NAME="$SA_NAME" -v SA_SHORT_NAME="$SA_SHORT_NAME" -v FOO4="$SA_TOKEN" -v CA_CRT="$CA_CRT" '{
+          sub(/MASTER_PREFIX/, MASTER_PREFIX);
+          sub(/SA_NAME/, SA_NAME);
+          sub(/SA_SHORT_NAME/, SA_SHORT_NAME);
+          sub(/SA_TOKEN/, SA_TOKEN);
+          sub(/CA_CRT/, CA_CRT);
+          print;
+      }' ${image_config_path}.tpl.orig > ${image_config_path}.tpl
 
       echo "Generating kubernetes-plugin configuration (${image_config_path}.tpl) ..."
       envsubst < "${image_config_path}.tpl" > "${image_config_path}"
